@@ -1,0 +1,80 @@
+use galatest_db;
+
+show tables;
+
+select * from users;
+select * from reserva_schedule;
+/*-----------------------------------PLACE*/
+drop table place;
+create table place(
+	id_place int auto_increment  not null,
+	title_place varchar(255) not null,
+	ubication_place varchar(255) not null,
+    state_place int default 0,
+    rate_place int default 5,
+    category_place varchar(200) not null,
+    url_img_place varchar(255) not null,
+    capacidad_place int default 0,
+    primary key(id_district)
+);
+
+insert into place (`id_place`,`title_place`,`ubication_place`,`state_place`,`rate_place`,`category_place`,`url_img_place`,`capacidad_place`) values 
+				  (null,"Zara Coworking","San Isidro",0,3,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Clack Space","Chorrillos",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",200),
+                  (null,"Zara Coworking","San Isidro",0,4,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Crazy Coworking","Chorrillos",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",300),
+                  (null,"Zara Coworking","San Isidro",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Suarez Coworking","Chorrillos",0,3,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Zara Coworking","Chorrillos",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Zara Coworking","San Isidro",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",400),
+                  (null,"Zara Coworking","San Isidro",0,4,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Zara Coworking","Chorrillos",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",300),
+                  (null,"Zara Coworking","San Isidro",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",200),
+                  (null,"Zara Coworking","Surco",0,2,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Zara Coworking","San Isidro",0,4,"Coworking","https://picsum.photos/id/1078/3000/2000",400),
+                  (null,"Zara Coworking","Chorrillos",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",300),
+                  (null,"Zara Coworking","Miraflores",0,3,"Coworking","https://picsum.photos/id/1078/3000/2000",100),
+                  (null,"Zara Coworking","Surco",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",300),
+                  (null,"Zara Coworking","Surco",0,5,"Coworking","https://picsum.photos/id/1078/3000/2000",100);
+
+select * from place where capacidad_place=100 and ubication_place="surco" ;
+
+select * from place ;
+
+/*-----------------------------------DISTRICT*/
+drop table district;
+create table district(
+	id_district int auto_increment  not null,
+	title_district varchar(255) not null,
+	description_district varchar(255) not null,
+	url_district varchar(2000) not null,
+    primary key(id_district)
+);
+
+insert into district (`id_district`,`title_district`,`description_district`,`url_district`)values
+					 (null,"Miraflores","Beautiful Zone","https://picsum.photos/id/1029/4887/2759"),
+                     (null,"SanIsidro","Beautiful Zone","https://picsum.photos/id/1029/4887/2759"),
+                     (null,"Chorrillos","Beautiful Zone","https://picsum.photos/id/1029/4887/2759"),
+                     (null,"Surco","Beautiful Zone","https://picsum.photos/id/1029/4887/2759");
+                     
+select * from district;
+
+/*-----------------------------------RESERVA*/
+drop table reserva;
+create table reserva(
+	id_reserva int auto_increment  not null,
+    user_reserva varchar(200) not null,
+    email_reserva varchar(200) not null,
+    description_reserva varchar(200) not null,
+    name_local_reserva varchar(200) not null
+);
+
+select * from reserva;
+
+
+/*-----------------------------------Review*/
+
+
+
+/*Querys*/
+SELECT * FROM place WHERE rate_place=5;
